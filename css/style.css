@@ -1,0 +1,55 @@
+body {
+  background: white;
+}
+
+.column1 {
+  position: relative;
+  left: 25px;
+  }
+
+.container1 {
+  width: 584px;
+  height: 300px;
+  text-align: center;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.drop {
+  width: 80px;
+  height: 40px;
+  border-radius: 50px;
+  background: lime;
+}
+
+.container2 {
+  position: relative;
+  top: 20px;
+  width: 575px;
+  height: 495px;
+  border: 1px solid black;
+  background: rgb(79, 113, 255);
+}
+
+.row {
+  float: left;
+  width: 100%;
+}
+
+.col {
+  float: left;
+  width: 80px;
+  height: 80px;
+  border: 0.1px solid black;
+  border-radius: 50px;
+  background: white;
+  text-align: center;
+}
+
+.reset {
+  position: relative;
+  top: 20px;
+  float: left;
+}
+
+
