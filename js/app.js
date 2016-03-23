@@ -36,7 +36,7 @@ var turn = '';
 
 
 var checkRow = function() {
-  for(var i=0; i<7; i++) {
+  for(var i=0; i<6; i++) {
     if(board[i][0] === board[i][1] && board[i][1] === board[i][2] && board[i][2] === board[i][3] && board[i][0] !== ('') && board[i][1] !== ('') && board[i][2] !== ('') && board[i][3] !== ('')) {
       return true;
     }
@@ -52,19 +52,19 @@ var checkRow = function() {
   }
 };
 
-var checkCol = function() {
-  for(var j=0; j<6; j++) {
-    if(board[5][j] === board[4][j] && board[4][j] === board[3][j] && board[3][j] === board[2][j] && board[5][j] !== ('') && board[4][j] !== ('') && board[3][j] !== ('') && board[2][j] !== ('')) {
-      return true;
-    }
-    if(board[4][j] === board[3][j] && board[3][j] === board[2][j] && board[2][j] === board[1][j] && board[4][j] !== ('') && board[3][j] !== ('') && board[2][j] !== ('') && board[1][j] !== ('')) {
-      return true;
-    }
-    if(board[3][j] === board[2][j] && board[3][j] === board[1][j] && board[1][j] === board[1][j] && board[3][j] !== ('') && board[2][j] !== ('') && board[1][j] !== ('') && board[0][j] !== ('')) {
-      return true;
-    }
-  }
-};
+// var checkCol = function() {
+//   for(var j=0; j<6; j++) {
+//     if(board[5][j] === board[4][j] && board[4][j] === board[3][j] && board[3][j] === board[2][j] && board[5][j] !== ('') && board[4][j] !== ('') && board[3][j] !== ('') && board[2][j] !== ('')) {
+//       return true;
+//     }
+//     if(board[4][j] === board[3][j] && board[3][j] === board[2][j] && board[2][j] === board[1][j] && board[4][j] !== ('') && board[3][j] !== ('') && board[2][j] !== ('') && board[1][j] !== ('')) {
+//       return true;
+//     }
+//     if(board[3][j] === board[2][j] && board[3][j] === board[1][j] && board[1][j] === board[1][j] && board[3][j] !== ('') && board[2][j] !== ('') && board[1][j] !== ('') && board[0][j] !== ('')) {
+//       return true;
+//     }
+//   }
+// };
 
 var checkCol = function() {
   for(var j=0; j<6; j++) {
@@ -94,7 +94,7 @@ var move = $drop0.on('click', function(){
   for(var i = 5; i >= 0; i--) {
     if(board[i][0] === '') {
       board[i][0] = turn;
-      $('.row' + i + ' .col0').addClass(turn + " animated" + " flash");
+      $('.row' + i + ' .col0').addClass(turn);
       checkWin();
       return;
     }
