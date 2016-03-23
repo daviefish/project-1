@@ -34,7 +34,6 @@ var $drop6 = $('#drop6');
 
 var turn = '';
 
-
 var checkRow = function() {
   for(var i=0; i<6; i++) {
     if(board[i][0] === board[i][1] && board[i][1] === board[i][2] && board[i][2] === board[i][3] && board[i][0] !== ('') && board[i][1] !== ('') && board[i][2] !== ('') && board[i][3] !== ('')) {
@@ -52,22 +51,8 @@ var checkRow = function() {
   }
 };
 
-// var checkCol = function() {
-//   for(var j=0; j<6; j++) {
-//     if(board[5][j] === board[4][j] && board[4][j] === board[3][j] && board[3][j] === board[2][j] && board[5][j] !== ('') && board[4][j] !== ('') && board[3][j] !== ('') && board[2][j] !== ('')) {
-//       return true;
-//     }
-//     if(board[4][j] === board[3][j] && board[3][j] === board[2][j] && board[2][j] === board[1][j] && board[4][j] !== ('') && board[3][j] !== ('') && board[2][j] !== ('') && board[1][j] !== ('')) {
-//       return true;
-//     }
-//     if(board[3][j] === board[2][j] && board[3][j] === board[1][j] && board[1][j] === board[1][j] && board[3][j] !== ('') && board[2][j] !== ('') && board[1][j] !== ('') && board[0][j] !== ('')) {
-//       return true;
-//     }
-//   }
-// };
-
 var checkCol = function() {
-  for(var j=0; j<6; j++) {
+  for(var j=0; j<7; j++) {
     if(board[5][j] === board[4][j] && board[4][j] === board[3][j] && board[3][j] === board[2][j] && board[5][j] !== ('') && board[4][j] !== ('') && board[3][j] !== ('') && board[2][j] !== ('')) {
       return true;
     }
@@ -80,12 +65,38 @@ var checkCol = function() {
   }
 };
 
+var checkDiagLeft = function() {
+  for(var i = 0; i<3; i++) {
+    for(var j = 0; j<4; j++) {
+      if(board[i][j] === board[i+1][j+1] && board[i+1][j+1] === board[i+2][j+2] && board[i+2][j+2] === board[i+3][j+3] && board[i][j] !== ('') && board[i+1][j+1] !== ('') && board[i+2][j+2] !== ('') && board[i+3][j+3] !== ('')) {
+      return true;
+      }
+    }
+  }
+};
+
+var checkDiagRight = function() {
+  for(var i = 3; i<6; i++) {
+    for(var j = 0; j<4; j++) {
+        if(board[i][j] === board[i-1][j+1] && board[i-1][j+1] === board[i-2][j+2] && board[i-2][j+2] === board[i-3][j+3] && board[i][j] !== ('') && board[i-1][j+1] !== ('') && board[i-2][j+2] !== ('') && board[i-3][j+3] !== ('')) {
+      return true;
+      }
+    }
+  }
+};
+
 var checkWin = function() {
    if (checkCol()) {
     return window.alert('YOU HAVE WON'), startOver();
   }
   if (checkRow()) {
     return window.alert('YOU HAVE WON'), startOver();
+  }
+  if (checkDiagLeft()) {
+        return window.alert('YOU HAVE WON'), startOver();
+  }
+  if (checkDiagRight()) {
+        return window.alert('YOU HAVE WON'), startOver();
   }
 };
 
