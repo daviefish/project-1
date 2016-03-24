@@ -1,25 +1,31 @@
 body {
-  background: white;
+  background: url("http://i1021.photobucket.com/albums/af336/rsvr85_2/WMP12-Background/rsvr85_WMP12.jpg");
+  background-size: cover;
 }
 
-.column1 {
-  position: relative;
-  left: 25px;
-  }
+.instructions {
+  background: url("http://www.clker.com/cliparts/v/h/8/y/y/m/instructions-hi.png");
+  background-size: cover;
+  width: 200px;
+  height: 65px;
+  float: left;
+  border-radius: 50px;
+
+}
 
 .container {
   width: 584px;
   height: 300px;
   text-align: center;
-  margin-left: auto;
-  margin-right: auto;
+  margin: 0 auto;
 }
 
 .drop {
   width: 80px;
-  height: 40px;
+  height: 80px;
   border-radius: 50px;
-  background: lime;
+  background: url("../arrow.png");
+  background-size: cover;
 }
 
 .board_wrapper {
@@ -48,8 +54,13 @@ body {
 
 .reset {
   position: relative;
-  top: 20px;
+  top: 40px;
   float: left;
+  width: 60px;
+  height: 60px;
+  border-radius: 40px;
+  background: url("http://cdn2.hubspot.net/hub/153301/file-1634456190-jpg/Performing_a_Hard_Reset.jpg");
+  background-size: cover;
 }
 
 .red {
@@ -60,4 +71,39 @@ body {
   background: green;
 }
 
+.celebration {
+  background: url("http://u.osu.edu/ialc/files/2015/04/small_celebration-balloons-2em2mw0.jpg");
+}
+
+.scoreboard {
+  background: url("http://cdn4.sportngin.com/attachments/photo/3128/7544/scoreboard_banner.png");
+}
+
+.description {
+  display: none;
+  clear: left;
+  position: relative;
+  top: 50px;
+}
+
+.continue {
+  background: url("http://thumb9.shutterstock.com/display_pic_with_logo/915209/312302552/stock-vector-continue-button-312302552.jpg");
+  background-size: cover;
+  position: relative;
+  width: 60px;
+  height: 60px;
+  border-radius: 50px;
+  margin: 0 auto;
+}
+
+.continue2 {
+  display: none;
+  background: url("http://thumb9.shutterstock.com/display_pic_with_logo/915209/312302552/stock-vector-continue-button-312302552.jpg");
+  background-size: cover;
+  width: 500px;
+  height: 500px;
+  border-radius: 500px;
+  position: relative;
+  left: 400px;
+}
 
