@@ -62,14 +62,6 @@ var $continueGame2 = $('.continue2').on('click', function(){
   $('.container').show();
   $('.container2').show();
   $('.instructions').show();
-
-  var $container2 = $('.container2');
-  jQuery.data($container2, "score", {
-    redWins: redWins,
-    greenWins: greenWins
-  });
-  $('#playerRedScore').text(jQuery.data($container2, "score").redWins);
-  $('#playerGreenScore').text(jQuery.data($container2, "score").greenWins);
 });
 
 var checkRow = function() {
@@ -77,36 +69,44 @@ var checkRow = function() {
     if(board[i][0] === board[i][1] && board[i][1] === board[i][2] && board[i][2] === board[i][3] && board[i][0] !== ('') && board[i][1] !== ('') && board[i][2] !== ('') && board[i][3] !== ('')) {
         if(board[i][0] === 'red') {
           redWins = redWins + 1;
+          $('#playerRedScore').text(redWins);
         }
         if (board[i][0] === 'green') {
           greenWins = greenWins +1;
+          $('#playerGreenScore').text(greenWins);
         }
       return true;
     }
      if(board[i][1] === board[i][2] && board[i][2] === board[i][3] && board[i][3] === board[i][4] && board[i][1] !== ('') && board[i][2] !== ('') && board[i][3] !== ('') && board[i][4] !== ('')) {
       if(board[i][1] === 'red') {
           redWins = redWins + 1;
+          $('#playerRedScore').text(redWins);
         }
         if (board[i][1] === 'green') {
           greenWins = greenWins +1;
+          $('#playerGreenScore').text(greenWins);
         }
      return true;
     }
      if(board[i][2] === board[i][3] && board[i][3] === board[i][4] && board[i][4] === board[i][5] && board[i][2] !== ('') && board[i][3] !== ('') && board[i][4] !== ('') && board[i][5] !== ('')) {
        if(board[i][2] === 'red') {
           redWins = redWins + 1;
+          $('#playerRedScore').text(redWins);
         }
         if (board[i][2] === 'green') {
           greenWins = greenWins +1;
+          $('#playerGreenScore').text(greenWins);
         }
       return true;
     }
     if(board[i][3] === board[i][4] && board[i][4] === board[i][5] && board[i][5] === board[i][6] && board[i][3] !== ('') && board[i][4] !== ('') && board[i][5] !== ('') && board[i][6] !== ('')) {
        if(board[i][3] === 'red') {
           redWins = redWins + 1;
+          $('#playerRedScore').text(redWins);
         }
         if (board[i][3] === 'green') {
           greenWins = greenWins +1;
+          $('#playerGreenScore').text(greenWins);
         }
       return true;
     }
@@ -118,27 +118,33 @@ var checkCol = function() {
     if(board[5][j] === board[4][j] && board[4][j] === board[3][j] && board[3][j] === board[2][j] && board[5][j] !== ('') && board[4][j] !== ('') && board[3][j] !== ('') && board[2][j] !== ('')) {
        if(board[5][j] === 'red') {
           redWins = redWins + 1;
+          $('#playerRedScore').text(redWins);
         }
         if (board[5][j] === 'green') {
           greenWins = greenWins +1;
+          $('#playerGreenScore').text(greenWins);
         }
       return true;
     }
     if(board[4][j] === board[3][j] && board[3][j] === board[2][j] && board[2][j] === board[1][j] && board[4][j] !== ('') && board[3][j] !== ('') && board[2][j] !== ('') && board[1][j] !== ('')) {
        if(board[4][j] === 'red') {
           redWins = redWins + 1;
+          $('#playerRedScore').text(redWins);
         }
         if (board[4][j] === 'green') {
           greenWins = greenWins +1;
+          $('#playerGreenScore').text(greenWins);
         }
       return true;
     }
     if(board[3][j] === board[2][j] && board[3][j] === board[1][j] && board[1][j] === board[1][j] && board[3][j] !== ('') && board[2][j] !== ('') && board[1][j] !== ('') && board[0][j] !== ('')) {
        if(board[3][j] === 'red') {
           redWins = redWins + 1;
+          $('#playerRedScore').text(redWins);
         }
         if (board[3][j] === 'green') {
           greenWins = greenWins +1;
+          $('#playerGreenScore').text(greenWins);
         }
       return true;
     }
@@ -151,9 +157,11 @@ var checkDiagLeft = function() {
       if(board[i][j] === board[i+1][j+1] && board[i+1][j+1] === board[i+2][j+2] && board[i+2][j+2] === board[i+3][j+3] && board[i][j] !== ('') && board[i+1][j+1] !== ('') && board[i+2][j+2] !== ('') && board[i+3][j+3] !== ('')) {
        if(board[i][j] === 'red') {
           redWins = redWins + 1;
+          $('#playerRedScore').text(redWins);
         }
         if (board[i][j] === 'green') {
           greenWins = greenWins +1;
+          $('#playerGreenScore').text(greenWins);
         }
       return true;
       }
@@ -167,9 +175,11 @@ var checkDiagRight = function() {
         if(board[i][j] === board[i-1][j+1] && board[i-1][j+1] === board[i-2][j+2] && board[i-2][j+2] === board[i-3][j+3] && board[i][j] !== ('') && board[i-1][j+1] !== ('') && board[i-2][j+2] !== ('') && board[i-3][j+3] !== ('')) {
            if(board[i][j] === 'red') {
               redWins = redWins + 1;
+              $('#playerRedScore').text(redWins);
             }
             if (board[i][j] === 'green') {
               greenWins = greenWins +1;
+              $('#playerGreenScore').text(greenWins);
             }
       return true;
       }

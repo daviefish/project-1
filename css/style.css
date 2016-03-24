@@ -129,5 +129,15 @@ body {
   bottom: 250px;
 }
 
+@media screen and (max-width: 980px) {
+    .instructions {
+        width: 7%;
+        background: red;
+    }
+    body {
+      background-repeat: no-repeat;
+    }
+}
+
 
 
