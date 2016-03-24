@@ -8,7 +8,7 @@
   ];
 
 
-var resetButton = $('.reset').on('click', function(){
+var $resetButton = $('.reset').on('click', function(){
   $("*").removeClass("red green");
   board = [
     ['','','','','','',''],
@@ -42,36 +42,70 @@ var $drop6 = $('#drop6');
 
 var turn = '';
 
+var redWins = 0;
+var greenWins = 0;
 
-var instructions = $('.instructions').on('click', function() {
+var $instructions = $('.instructions').on('click', function() {
   $('.container').hide();
   $('.description').show();
 });
 
-var continueGame = $('.continue').on('click', function(){
+var $continueGame = $('.continue').on('click', function(){
   $('.description').hide();
   $('.container').show();
 });
 
-var continueGame2 = $('.continue2').on('click', function(){
+var $continueGame2 = $('.continue2').on('click', function(){
   $('.continue2').hide();
   $('body').removeClass('celebration');
   $('.container').show();
   $('.instructions').show();
+
+  var $container = $('.container2');
+  jQuery.data($container, "score", {
+    redWins: redWins,
+    greenWins: greenWins
+  });
+  $('#playerRedScore').text(jQuery.data($container, "score").redWins);
+  $('#playerGreenScore').text(jQuery.data($container, "score").greenWins);
 });
 
 var checkRow = function() {
   for(var i=0; i<6; i++) {
     if(board[i][0] === board[i][1] && board[i][1] === board[i][2] && board[i][2] === board[i][3] && board[i][0] !== ('') && board[i][1] !== ('') && board[i][2] !== ('') && board[i][3] !== ('')) {
+        if(board[i][0] === 'red') {
+          redWins = redWins + 1;
+        }
+        if (board[i][0] === 'green') {
+          greenWins = greenWins +1;
+        }
       return true;
     }
      if(board[i][1] === board[i][2] && board[i][2] === board[i][3] && board[i][3] === board[i][4] && board[i][1] !== ('') && board[i][2] !== ('') && board[i][3] !== ('') && board[i][4] !== ('')) {
+      if(board[i][1] === 'red') {
+          redWins = redWins + 1;
+        }
+        if (board[i][1] === 'green') {
+          greenWins = greenWins +1;
+        }
      return true;
     }
      if(board[i][2] === board[i][3] && board[i][3] === board[i][4] && board[i][4] === board[i][5] && board[i][2] !== ('') && board[i][3] !== ('') && board[i][4] !== ('') && board[i][5] !== ('')) {
+       if(board[i][2] === 'red') {
+          redWins = redWins + 1;
+        }
+        if (board[i][2] === 'green') {
+          greenWins = greenWins +1;
+        }
       return true;
     }
     if(board[i][3] === board[i][4] && board[i][4] === board[i][5] && board[i][5] === board[i][6] && board[i][3] !== ('') && board[i][4] !== ('') && board[i][5] !== ('') && board[i][6] !== ('')) {
+       if(board[i][3] === 'red') {
+          redWins = redWins + 1;
+        }
+        if (board[i][3] === 'green') {
+          greenWins = greenWins +1;
+        }
       return true;
     }
   }
@@ -80,12 +114,30 @@ var checkRow = function() {
 var checkCol = function() {
   for(var j=0; j<7; j++) {
     if(board[5][j] === board[4][j] && board[4][j] === board[3][j] && board[3][j] === board[2][j] && board[5][j] !== ('') && board[4][j] !== ('') && board[3][j] !== ('') && board[2][j] !== ('')) {
+       if(board[5][j] === 'red') {
+          redWins = redWins + 1;
+        }
+        if (board[5][j] === 'green') {
+          greenWins = greenWins +1;
+        }
       return true;
     }
     if(board[4][j] === board[3][j] && board[3][j] === board[2][j] && board[2][j] === board[1][j] && board[4][j] !== ('') && board[3][j] !== ('') && board[2][j] !== ('') && board[1][j] !== ('')) {
+       if(board[4][j] === 'red') {
+          redWins = redWins + 1;
+        }
+        if (board[4][j] === 'green') {
+          greenWins = greenWins +1;
+        }
       return true;
     }
     if(board[3][j] === board[2][j] && board[3][j] === board[1][j] && board[1][j] === board[1][j] && board[3][j] !== ('') && board[2][j] !== ('') && board[1][j] !== ('') && board[0][j] !== ('')) {
+       if(board[3][j] === 'red') {
+          redWins = redWins + 1;
+        }
+        if (board[3][j] === 'green') {
+          greenWins = greenWins +1;
+        }
       return true;
     }
   }
@@ -95,6 +147,12 @@ var checkDiagLeft = function() {
   for(var i = 0; i<3; i++) {
     for(var j = 0; j<4; j++) {
       if(board[i][j] === board[i+1][j+1] && board[i+1][j+1] === board[i+2][j+2] && board[i+2][j+2] === board[i+3][j+3] && board[i][j] !== ('') && board[i+1][j+1] !== ('') && board[i+2][j+2] !== ('') && board[i+3][j+3] !== ('')) {
+       if(board[i][j] === 'red') {
+          redWins = redWins + 1;
+        }
+        if (board[i][j] === 'green') {
+          greenWins = greenWins +1;
+        }
       return true;
       }
     }
@@ -105,6 +163,12 @@ var checkDiagRight = function() {
   for(var i = 3; i<6; i++) {
     for(var j = 0; j<4; j++) {
         if(board[i][j] === board[i-1][j+1] && board[i-1][j+1] === board[i-2][j+2] && board[i-2][j+2] === board[i-3][j+3] && board[i][j] !== ('') && board[i-1][j+1] !== ('') && board[i-2][j+2] !== ('') && board[i-3][j+3] !== ('')) {
+           if(board[i][j] === 'red') {
+              redWins = redWins + 1;
+            }
+            if (board[i][j] === 'green') {
+              greenWins = greenWins +1;
+            }
       return true;
       }
     }
@@ -112,28 +176,7 @@ var checkDiagRight = function() {
 };
 
 var checkWin = function() {
-   if (checkCol()) {
-      startOver();
-      $('.container').hide();
-      $('.instructions').hide();
-      $('body').addClass('celebration' + ' animated' +' zoomIn');
-      $('.continue2').show();
-  }
-   if (checkRow()) {
-      startOver();
-      $('.container').hide();
-      $('.instructions').hide();
-      $('body').addClass('celebration' + ' animated' +' zoomIn');
-      $('.continue2').show();
-  }
-   if (checkDiagLeft()) {
-      startOver();
-      $('.container').hide();
-      $('.instructions').hide();
-      $('body').addClass('celebration' + ' animated' +' zoomIn');
-      $('.continue2').show();
-  }
-   if (checkDiagRight()) {
+   if (checkCol() || checkRow() || checkDiagLeft() || checkDiagRight()) {
       startOver();
       $('.container').hide();
       $('.instructions').hide();
@@ -141,21 +184,6 @@ var checkWin = function() {
       $('.continue2').show();
   }
 };
-
-// var checkWin = function() {
-//    if (checkCol()) {
-//     return window.alert('YOU HAVE WON'), startOver();
-//   }
-  // if (checkRow()) {
-  //   return window.alert('YOU HAVE WON'), startOver();
-  // }
-  // if (checkDiagLeft()) {
-  //       return window.alert('YOU HAVE WON'), startOver();
-  // }
-  // if (checkDiagRight()) {
-  //       return window.alert('YOU HAVE WON'), startOver();
-  // }
-// };
 
 var turn ='';
 
