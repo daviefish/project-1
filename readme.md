@@ -9,4 +9,7 @@ Description
     - If no player is able to connect 4 pieces in a row, the game ends and no winner is declared
 
 Rules
-    Each player takes turns 'dropping' their colored piece in a column
+    - Each player takes turns 'dropping' their colored piece in a column
+
+Link to Game
+    - http://daviefish.github.io/project-1/

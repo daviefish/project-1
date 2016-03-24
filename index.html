@@ -1,74 +1,76 @@
 <!DOCTYPE html>
 <html>
 <head>
+  <meta charset="UTF-8">
+  <meta name="viewport">
   <title>Connect 4</title>
   <link rel="stylesheet" type="text/css" href="css/style.css">
-  <link rel="stylesheet" href="animate.css">
+  <link rel="stylesheet" href="css/animate.css">
 </head>
 <body>
-  <button class = "instructions"></button>
-  <section class ="container">
-    <button class ="drop" id="drop0"></button>
-    <button class ="drop" id="drop1"></button>
-    <button class ="drop" id="drop2"></button>
-    <button class ="drop" id="drop3"></button>
-    <button class ="drop" id="drop4"></button>
-    <button class ="drop" id="drop5"></button>
-    <button class ="drop" id="drop6"></button>
-    <div class = "board_wrapper">
-      <div class = "row row0">
-        <div class = "col col0"></div>
-        <div class = "col col1"></div>
-        <div class = "col col2"></div>
-        <div class = "col col3"></div>
-        <div class = "col col4"></div>
-        <div class = "col col5"></div>
-        <div class = "col col6"></div>
+  <button class="instructions"></button>
+  <section class="container">
+    <button class="drop" id="drop0"></button>
+    <button class="drop" id="drop1"></button>
+    <button class="drop" id="drop2"></button>
+    <button class="drop" id="drop3"></button>
+    <button class="drop" id="drop4"></button>
+    <button class="drop" id="drop5"></button>
+    <button class="drop" id="drop6"></button>
+    <div class="board_wrapper">
+      <div class="row row0">
+        <div class="col col0"></div>
+        <div class="col col1"></div>
+        <div class="col col2"></div>
+        <div class="col col3"></div>
+        <div class="col col4"></div>
+        <div class="col col5"></div>
+        <div class="col col6"></div>
       </div>
-      <div class = "row row1">
-        <div class = "col col0"></div>
-        <div class = "col col1"></div>
-        <div class = "col col2"></div>
-        <div class = "col col3"></div>
-        <div class = "col col4"></div>
-        <div class = "col col5"></div>
-        <div class = "col col6"></div>
+      <div class="row row1">
+        <div class="col col0"></div>
+        <div class="col col1"></div>
+        <div class="col col2"></div>
+        <div class="col col3"></div>
+        <div class="col col4"></div>
+        <div class="col col5"></div>
+        <div class="col col6"></div>
       </div>
-      <div class = "row row2">
-        <div class = "col col0"></div>
-        <div class = "col col1"></div>
-        <div class = "col col2"></div>
-        <div class = "col col3"></div>
-        <div class = "col col4"></div>
-        <div class = "col col5"></div>
-        <div class = "col col6"></div>
+      <div class="row row2">
+        <div class="col col0"></div>
+        <div class="col col1"></div>
+        <div class="col col2"></div>
+        <div class="col col3"></div>
+        <div class="col col4"></div>
+        <div class="col col5"></div>
+        <div class="col col6"></div>
       </div>
-      <div class = "row row3">
-        <div class = "col col0"></div>
-        <div class = "col col1"></div>
-        <div class = "col col2"></div>
-        <div class = "col col3"></div>
-        <div class = "col col4"></div>
-        <div class = "col col5"></div>
-        <div class = "col col6"></div>
+      <div class="row row3">
+        <div class="col col0"></div>
+        <div class="col col1"></div>
+        <div class="col col2"></div>
+        <div class="col col3"></div>
+        <div class="col col4"></div>
+        <div class="col col5"></div>
+        <div class="col col6"></div>
       </div>
-      <div class = "row row4">
-        <div class = "col col0"></div>
-        <div class = "col col1"></div>
-        <div class = "col col2"></div>
-        <div class = "col col3"></div>
-        <div class = "col col4"></div>
-        <div class = "col col5"></div>
-        <div class = "col col6"></div>
+      <div class="row row4">
+        <div class="col col0"></div>
+        <div class="col col1"></div>
+        <div class="col col2"></div>
+        <div class="col col3"></div>
+        <div class="col col4"></div>
+        <div class="col col5"></div>
+        <div class="col col6"></div>
       </div>
-      <div class = "row row5">
-        <div class = "col col0"></div>
-        <div class = "col col1"></div>
-        <div class = "col col2"></div>
-        <div class = "col col3"></div>
-        <div class = "col col4"></div>
-        <div class = "col col5"></div>
-        <div class = "col col6"></div>
+      <div class="row row5">
+        <div class="col col0"></div>
+        <div class="col col1"></div>
+        <div class="col col2"></div>
+        <div class="col col3"></div>
+        <div class="col col4"></div>
+        <div class="col col5"></div>
+        <div class="col col6"></div>
       </div>
     </div>
     <div class="row">
@@ -76,11 +78,11 @@
     </div>
   </section>
   <section class="container2">
-    <div class ="scoreboard"></div>
+    <h1 class="scoreboard">Scoreboard</h1>
     <div class="playerRed">Player Red: <span id="playerRedScore">0</span></div>
     <div class="playerGreen">Player Green: <span id="playerGreenScore">0</span></div>
   </section>
-  <div class = "description">
+  <div class="description">
     <h1>Description</h1>
     <ul>
       <li>Connect 4 is a two player game on seven-column, six row vertically suspended grid</li>
@@ -89,7 +91,7 @@
       <li>In order to win, each player is required to connect four pieces next to each other horizontally, vertically, or diagonally before the opponent</li>
       <li>If no player is able to connect 4 pieces in a row, the game ends and no winner is declared</li>
     </ul>
-    <button class = "continue"></button>
+    <button class="continue"></button>
   </div>
   <button class="continue2 animated tada"></button>
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.0/jquery.min.js"></script>

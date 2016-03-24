@@ -23,7 +23,7 @@ body {
   width: 80px;
   height: 80px;
   border-radius: 50px;
-  background: url("../arrow.png");
+  background: url("../pics/arrow.png");
   background-size: cover;
 }
 
@@ -104,6 +104,29 @@ body {
   border-radius: 500px;
   position: relative;
   left: 400px;
+}
+
+.scoreboard {
+  width: 600px;
+  height: 50px;
+  position: relative;
+  bottom: 250px;
+}
+
+.playerRed {
+  position: relative;
+  left: 8px;
+}
+
+.playerGreen {
+  position: relative;
+  left: 8px;
+}
+
+.container2 {
+  position: relative;
+  left: 60px;
+  bottom: 250px;
 }
 
 

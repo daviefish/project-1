@@ -21,7 +21,8 @@ var $resetButton = $('.reset').on('click', function(){
 });
 
 var startOver = function() {
- $("*").removeClass("red green");
+ $('*').removeClass('red green');
+  $('.col').addClass('animated bounceInDown')
   board = [
     ['','','','','','',''],
     ['','','','','','',''],
@@ -59,15 +60,16 @@ var $continueGame2 = $('.continue2').on('click', function(){
   $('.continue2').hide();
   $('body').removeClass('celebration');
   $('.container').show();
+  $('.container2').show();
   $('.instructions').show();
 
-  var $container = $('.container2');
-  jQuery.data($container, "score", {
+  var $container2 = $('.container2');
+  jQuery.data($container2, "score", {
     redWins: redWins,
     greenWins: greenWins
   });
-  $('#playerRedScore').text(jQuery.data($container, "score").redWins);
-  $('#playerGreenScore').text(jQuery.data($container, "score").greenWins);
+  $('#playerRedScore').text(jQuery.data($container2, "score").redWins);
+  $('#playerGreenScore').text(jQuery.data($container2, "score").greenWins);
 });
 
 var checkRow = function() {
@@ -182,6 +184,7 @@ var checkWin = function() {
       $('.instructions').hide();
       $('body').addClass('celebration' + ' animated' +' zoomIn');
       $('.continue2').show();
+      $('.container2').hide();
   }
 };
 
