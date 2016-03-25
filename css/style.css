@@ -81,8 +81,6 @@ body {
 .description {
   display: none;
   clear: left;
-  position: relative;
-  top: 40px;
 }
 
 .continue {
@@ -103,7 +101,7 @@ body {
   height: 500px;
   border-radius: 500px;
   position: relative;
-  left: 400px;
+  left: 450px;
 }
 
 .scoreboard {
@@ -137,6 +135,11 @@ body {
     body {
       background-repeat: no-repeat;
     }
+}
+
+.funnyGif {
+  display: none;
+  background: url("http://giphy.com/gifs/reactiongifs-mfw-club-12Nv3nBSCAbLO0");
 }
 
 

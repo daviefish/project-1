@@ -9,15 +9,7 @@
 
 
 var $resetButton = $('.reset').on('click', function(){
-  $("*").removeClass("red green");
-  board = [
-    ['','','','','','',''],
-    ['','','','','','',''],
-    ['','','','','','',''],
-    ['','','','','','',''],
-    ['','','','','','',''],
-    ['','','','','','',''],
-  ];
+  location.reload();
 });
 
 var startOver = function() {
@@ -63,6 +55,7 @@ var $continueGame2 = $('.continue2').on('click', function(){
   $('.container2').show();
   $('.instructions').show();
 });
+
 
 var checkRow = function() {
   for(var i=0; i<6; i++) {
@@ -140,6 +133,7 @@ var checkCol = function() {
     if(board[3][j] === board[2][j] && board[3][j] === board[1][j] && board[1][j] === board[1][j] && board[3][j] !== ('') && board[2][j] !== ('') && board[1][j] !== ('') && board[0][j] !== ('')) {
        if(board[3][j] === 'red') {
           redWins = redWins + 1;
+
           $('#playerRedScore').text(redWins);
         }
         if (board[3][j] === 'green') {
@@ -197,6 +191,7 @@ var checkWin = function() {
       $('.container2').hide();
   }
 };
+
 
 var turn ='';
 
